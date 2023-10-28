@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'ui/page/404/methods/lazyput/lazy_put_page.dart';
 import 'ui/page/404/methods/methods_page.dart';
 import 'ui/page/404/methods/put/put_page.dart';
+import 'ui/page/404/methods/put_async/put_async.dart';
 import 'ui/page/404/page_404.dart';
 import 'ui/page/home/home_page.dart';
 import 'ui/page/basico/basico_page.dart';
@@ -36,6 +37,10 @@ class MyApp extends StatelessWidget {
             GetPage(
               name: '/lazyput',
               page: () => LazyPutPage(),
+            ),
+            GetPage(
+              name: '/putasync',
+              page: () => const PutAsync(),
             ),
           ],
         ),

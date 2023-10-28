@@ -26,6 +26,13 @@ class MethodsPage extends StatelessWidget {
                 },
                 child: const Text('Lazy Put Page'),
               ),
+              const SizedBox(height: 20),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/methods/putasync');
+                },
+                child: const Text('Put Async Page'),
+              ),
             ],
           ),
         ));
