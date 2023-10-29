@@ -33,6 +33,27 @@ class MethodsPage extends StatelessWidget {
                 },
                 child: const Text('Put Async Page'),
               ),
+              const SizedBox(height: 20),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/methods/create');
+                },
+                child: const Text('CreatePage'),
+              ),
+              const SizedBox(height: 20),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/methods/update');
+                },
+                child: const Text('Update Page'),
+              ),
+              const SizedBox(height: 20),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/methods/delete');
+                },
+                child: const Text('Delete Page'),
+              ),
             ],
           ),
         ));
