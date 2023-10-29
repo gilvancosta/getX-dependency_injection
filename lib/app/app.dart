@@ -9,8 +9,14 @@ import 'ui/page/404/methods/put/put_page.dart';
 import 'ui/page/404/methods/put_async/put_async.dart';
 import 'ui/page/404/methods/update/update_page.dart';
 import 'ui/page/404/page_404.dart';
+import 'ui/page/binding/binding_Builder_page.dart';
+import 'ui/page/binding/binding_Builder_put_page.dart';
+import 'ui/page/binding/bindings_page.dart';
+import 'ui/page/binding/controller/binding_controller.dart';
+import 'ui/page/binding/services/bindins_services.dart';
 import 'ui/page/home/home_page.dart';
 import 'ui/page/basico/basico_page.dart';
+import 'ui/page/minddleware/controller/minddleware_binding.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -40,6 +46,26 @@ class MyApp extends StatelessWidget {
             GetPage(name: '/update', page: () => UpdatePage()),
             GetPage(name: '/delete', page: () => DeletePage()),
           ],
+        ),
+        GetPage(
+          name: '/bindings',
+          binding: BindinsServices(),
+          middlewares: [
+            MinddlewareBinding(),
+          ],
+          page: () => const BindingsPage(),
+        ),
+        GetPage(
+          name: '/bindings-builder',
+          binding: BindingsBuilder(() {
+            Get.put(BindingController(name: 'Binding Builder'));
+          }),
+          page: () => const BindingBuilderPage(),
+        ),
+        GetPage(
+          name: '/bindings-builder-put',
+          binding: BindingsBuilder.put(() => BindingController(name: 'Binding Builder put')),
+          page: () => const BindingBuilderPutPage(),
         ),
       ],
       unknownRoute: GetPage(name: '/404', page: () => const Page404()),
