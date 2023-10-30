@@ -14,8 +14,11 @@ import 'ui/page/binding/binding_Builder_put_page.dart';
 import 'ui/page/binding/bindings_page.dart';
 import 'ui/page/binding/controller/binding_controller.dart';
 import 'ui/page/binding/services/bindins_services.dart';
+import 'ui/page/getx_services/getx_services_page.dart';
 import 'ui/page/home/home_page.dart';
 import 'ui/page/basico/basico_page.dart';
+import 'ui/page/inital_binding/initial/initial_bindigs.dart';
+import 'ui/page/inital_binding/initial_binging_page.dart';
 import 'ui/page/minddleware/controller/minddleware_binding.dart';
 
 class MyApp extends StatelessWidget {
@@ -24,6 +27,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialBinding: InitialBindigs(),
+//
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -66,6 +71,14 @@ class MyApp extends StatelessWidget {
           name: '/bindings-builder-put',
           binding: BindingsBuilder.put(() => BindingController(name: 'Binding Builder put')),
           page: () => const BindingBuilderPutPage(),
+        ),
+        GetPage(
+          name: '/initial-binding',
+          page: () => const InitialBingingPage(),
+        ),
+        GetPage(
+          name: '/getx-services',
+          page: () => const GetxServicesPage(),
         ),
       ],
       unknownRoute: GetPage(name: '/404', page: () => const Page404()),

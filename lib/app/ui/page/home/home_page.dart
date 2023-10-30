@@ -55,6 +55,18 @@ class HomePage extends StatelessWidget {
                   Get.to(const BindingsPage(), binding: BindingsBuilder.put(() => BindingController(name: 'Binding sem Rota Nomeada')));
                 },
                 child: const Text('Bindings sem Rota Nomeada')),
+            const SizedBox(height: 20),
+            ElevatedButton(
+                onPressed: () {
+                  Get.toNamed('/initial-binding');
+                },
+                child: const Text('Initial Binding Page')),
+            const SizedBox(height: 20),
+            ElevatedButton(
+                onPressed: () {
+                  Get.toNamed('/getx-services');
+                },
+                child: const Text('GetxServices')),
           ],
         )));
   }
